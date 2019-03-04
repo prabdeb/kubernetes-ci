@@ -1,19 +1,18 @@
 # Kubernetes CI
 
-WIP: Simple gated CI Server to run on K8's
+WIP: Simple gated CI Server to run on K8's Cluster typically in a hosted environment
 
 ## Architecture
 
 ### Components
 
 1. Server - Receive notifications on code changes, parse and trigger Pipeline
-    * SCM - Poll (GIT)
-    * SCM - WebHook (GitHub/BitBucket)
+    * SCM - WebHook (GitHub/BitBucket Server)
     * Pipeline Parser
     * Conditional Driver (Push/Tag/Pull Request/GIT Diff/GIT Branch/File Content)
     * Stage Loop (for/while)
     * Pipeline Execution (K8's Jobs)
-    * Logger (ElasticSearch/Kibana)
+    * Data Store & Logger (configMaps/etcd-io bbolt)
 2. Server UI - User Interface to View/Admin Server
 3. Authenticator - Authenticate and authorize users
     * RBAC
