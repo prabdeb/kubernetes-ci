@@ -1,5 +1,8 @@
 package webhook
 
+// Enables webhook based triggers, instead of polling
+// disable polling when enabled for a repository
+
 type (
 	// WebHook type
 	WebHook struct {

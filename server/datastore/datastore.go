@@ -3,13 +3,14 @@ package datastore
 import (
 	"time"
 
-	"github.com/prabdeb/kubernetes-ci/k8s"
+	"github.com/prabdeb/kubernetes-cicd/k8s"
 
 	log "github.com/Sirupsen/logrus"
 	bolt "go.etcd.io/bbolt"
 )
 
-// DataStore type
+// DataStore type to store build logs either in configMaps or local flat DB in a PVC
+// The last two meathods need to be re-structured
 type DataStore struct {
 	logger  *bolt.DB
 	configs *k8s.Kubernetes
